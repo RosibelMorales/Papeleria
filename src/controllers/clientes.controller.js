@@ -2,7 +2,7 @@ const pool = require('../database')
 const controladorClientes = {}
 
 controladorClientes.obtenerClientes=async(req,res)=>{
-    const [rows]=await pool.query('SELECT * FROM cliente');
+    const [rows]=await pool.query('SELECT * FROM Cliente');
     res.json(rows);
 };
 
