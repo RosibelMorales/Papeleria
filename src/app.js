@@ -4,7 +4,7 @@ const app = express()
 
 
 //Settings
-app.set('port', process.env.PORT || 5800)
+app.set('port', process.env.PORT || 3000)
 
 //Middlewares
 app.use(express.json())
