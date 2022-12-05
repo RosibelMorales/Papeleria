@@ -26,6 +26,7 @@ PrecioUnidad FLOAT,
 PrecioPaquete FLOAT,
 PrecioMayoreo FLOAT,
 CompraPaquete FLOAT,
+fecha DATETIME(6) not null,
 primary key (idProducto));
 
 CREATE TABLE Administrador (CorreoAdmin VARCHAR (45) NOT NULL,
@@ -60,13 +61,13 @@ Celular VARCHAR(10) not null,
 Contraseña VARCHAR(10) not null,
 primary key (CorreoRepartidor));
 
-CREATE TABLE Registra (
-idRegistro INT NOT NULL AUTO_INCREMENT primary key,
-fechaRegistro DATETIME(6) not null,
-idProducto INT NOT NULL,
-CorreoAdmin VARCHAR (45) NOT NULL,
-foreign key (idProducto) references Producto (idProducto),
-foreign key (CorreoAdmin) references Administrador (CorreoAdmin));
+-- CREATE TABLE Registra (
+-- idRegistro INT NOT NULL AUTO_INCREMENT primary key,
+-- fechaRegistro DATETIME(6) not null,
+-- idProducto INT NOT NULL,
+-- CorreoAdmin VARCHAR (45) NOT NULL,
+-- foreign key (idProducto) references Producto (idProducto),
+-- foreign key (CorreoAdmin) references Administrador (CorreoAdmin));
 
 CREATE TABLE PedidoRepartidor (
 idPedido INT NOT NULL,
