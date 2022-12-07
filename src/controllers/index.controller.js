@@ -1,7 +1,8 @@
 const {pool} = require("../database.js")
-const ping = async(req,res)=>{
-    const result=await pool.query('select * from cliente');
-    res.json(result[0]);
+
+const root = async(req,res)=>{
+    const [rows]=await pool.query('SELECT * FROM Producto');
+    res.json(rows);
 };
 
-module.exports = ping
+module.exports = root

@@ -2,8 +2,8 @@ const pool = require('../database')
 const controladorProducto = {}
 
 controladorProducto.obtenerProductos = async (req, res) => {
-    const [row]=await pool.query('SELECT * FROM Producto');
-    res.json(row);
+    const [rows]=await pool.query('SELECT * FROM Producto');
+    res.json(rows);
 }
 
 controladorProducto.obtenerProducto = async(req,res)=>{
