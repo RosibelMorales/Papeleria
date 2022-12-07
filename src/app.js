@@ -10,7 +10,6 @@ app.set('port', process.env.PORT || 3000)
 app.use(express.json())
 app.use(morgan('dev'))
 app.use(express.urlencoded({extended:false}));
-app.use('/api/', require('./routes/index.routes'));
 app.use('/api/clientes', require('./routes/clientes.routes'));
 app.use('/api/admin', require('./routes/administrador.routes'));
 app.use('/api/repartidor', require('./routes/repartidor.routes'));
