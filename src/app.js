@@ -7,7 +7,7 @@ const app = express()
 //Settings
 app.set('port', process.env.PORT || 3000)
 
-const whitelist = ['http://localhost:4200']
+const whitelist = ['http://localhost:4200', 'https://papeleria-production.up.railway.app/api/productos']
 const options = {
     origin: (origin, callback) => {
         if(whitelist.includes(origin)){
