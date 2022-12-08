@@ -27,5 +27,6 @@ app.use('/api/clientes', require('./routes/clientes.routes'));
 app.use('/api/admin', require('./routes/administrador.routes'));
 app.use('/api/repartidores', require('./routes/repartidor.routes'));
 app.use('/api/productos', require('./routes/producto.routes'));
+app.use('/api/productos/Categoria', require('./routes/producto.routes'));
 
 module.exports = app
