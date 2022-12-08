@@ -8,6 +8,6 @@ router.get('/:idProducto', controladorProducto.obtenerProducto)
 router.post('/', controladorProducto.insertarProducto)
 router.put('/:idProducto', controladorProducto.actualizarProducto)
 router.delete('/:idProducto', controladorProducto.eliminarProducto)
-router.get('/:Categoria', controladorProducto.buscarCategoria)
+router.get('/categoria/:Categoria', controladorProducto.buscarCategoria)
 
 module.exports = router
