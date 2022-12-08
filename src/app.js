@@ -7,8 +7,13 @@ const app = express()
 //Settings
 app.set('port', process.env.PORT || 3000)
 
+var corsOptions = {
+    origin: 'http://localhost:4200',
+    optionsSuccessStatus: 200
+  }
+
 //Middlewares
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(morgan('dev'))
 app.use(express.urlencoded({extended:false}));
