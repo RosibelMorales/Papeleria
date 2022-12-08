@@ -35,8 +35,8 @@ controladorProducto.eliminarProducto = async (req, res)=>{
 }
 
 controladorProducto.buscarCategoria = async(req,res)=>{
-    const categoria = req.params.Categoria
-    const [rows]=await pool.query('SELECT * FROM Producto WHERE Categoria="?"',[categoria]);
+    const categoria = req.params.cat
+    const [rows]=await pool.query('SELECT * FROM Producto WHERE Categoria=?',[categoria]);
     res.send(rows);
     console.log(rows)
 }
