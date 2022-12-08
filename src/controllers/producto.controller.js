@@ -15,7 +15,7 @@ controladorProducto.obtenerProducto = async(req,res)=>{
 controladorProducto.insertarProducto = async (req, res)=>{
     const {idProducto,CodigoBarras,Categoria,Marca,Descripcion,Piezas,Color,Imagen,Imagen2,UnidadesMayoreo,ExistenciasPaquete,ExistenciasUnidad,Entradas,PrecioUnidad,PrecioPaquete,PrecioMayoreo,CompraPaquete} = req.body
     const fecha = new Date().toLocaleString()
-    const [rows] = await pool.query('INSERT INTO Producto VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [idProducto,CodigoBarras,Categoria,Marca,Descripcion,Piezas,Color,Imagen,Imagen2,UnidadesMayoreo,ExistenciasPaquete,ExistenciasUnidad,Entradas,PrecioUnidad,PrecioPaquete,PrecioMayoreo,CompraPaquete,fecha])
+    const [rows] = await pool.query('INSERT INTO Producto VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [idProducto,CodigoBarras,Categoria,Marca,Descripcion,Piezas,Color,Imagen,Imagen2,UnidadesMayoreo,ExistenciasPaquete,ExistenciasUnidad,Entradas,PrecioUnidad,PrecioPaquete,PrecioMayoreo,CompraPaquete,fecha])
     res.json({"status":"Producto insertado exitosamente"})
 }
 
