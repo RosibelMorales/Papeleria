@@ -13,9 +13,9 @@ controladorProducto.obtenerProducto = async(req,res)=>{
 }
 
 controladorProducto.insertarProducto = async (req, res)=>{
-    const {idProducto,CodigoBarras,Categoria,Marca,Descripcion,Piezas,Color,Imagen,Imagen2,UnidadesMayoreo,ExistenciasPaquete,ExistenciasUnidad,Entradas,PrecioUnidad,PrecioPaquete,PrecioMayoreo,CompraPaquete} = req.body
+    const {CodigoBarras,Categoria,Marca,Descripcion,Piezas,Color,Imagen,Imagen2,UnidadesMayoreo,ExistenciasPaquete,ExistenciasUnidad,Entradas,PrecioUnidad,PrecioPaquete,PrecioMayoreo,CompraPaquete} = req.body
     const fecha = new Date().toLocaleString()
-    const [rows] = await pool.query('INSERT INTO Producto VALUES(Aut,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [idProducto,CodigoBarras,Categoria,Marca,Descripcion,Piezas,Color,Imagen,Imagen2,UnidadesMayoreo,ExistenciasPaquete,ExistenciasUnidad,Entradas,PrecioUnidad,PrecioPaquete,PrecioMayoreo,CompraPaquete,fecha])
+    const [rows] = await pool.query('INSERT INTO Producto VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [CodigoBarras,Categoria,Marca,Descripcion,Piezas,Color,Imagen,Imagen2,UnidadesMayoreo,ExistenciasPaquete,ExistenciasUnidad,Entradas,PrecioUnidad,PrecioPaquete,PrecioMayoreo,CompraPaquete,fecha])
     res.json({"status":"Producto insertado exitosamente"})
 }
 
@@ -38,7 +38,6 @@ controladorProducto.buscarCategoria = async(req,res)=>{
     const categoria = req.params.cat
     const [rows]=await pool.query('SELECT * FROM Producto WHERE Categoria=?',[categoria]);
     res.send(rows);
-    console.log(rows)
 }
 
 module.exports = controladorProducto

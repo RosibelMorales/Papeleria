@@ -9,8 +9,8 @@ Celular VARCHAR(10),
 Contraseña VARCHAR(10) NOT NULL,
 primary key (CorreoCliente));
 
-CREATE TABLE Producto (idProducto INT NOT NULL AUTO_INCREMENT,
-CodigoBarras varchar(30) not null,
+CREATE TABLE Producto (idProducto INT AUTO_INCREMENT PRIMARY KEY,
+CodigoBarras varchar(30) NOT NULL,
 Categoria VARCHAR(45) NOT NULL,
 Marca VARCHAR(45) NOT NULL,
 Descripcion VARCHAR(100) NOT NULL,
@@ -26,8 +26,7 @@ PrecioUnidad FLOAT,
 PrecioPaquete FLOAT,
 PrecioMayoreo FLOAT,
 CompraPaquete FLOAT,
-fecha DATETIME(6) not null,
-primary key (idProducto));
+fecha DATETIME(6) NOT NULL);
 
 CREATE TABLE Administrador (CorreoAdmin VARCHAR (45) NOT NULL,
 Nombre VARCHAR(45) NOT NULL,
