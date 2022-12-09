@@ -19,7 +19,7 @@ const options = {
 }
 
 //Middlewares
-app.use(cors())
+app.use(cors(options))
 app.use(express.json())
 app.use(morgan('dev'))
 app.use(express.urlencoded({extended:false}));
