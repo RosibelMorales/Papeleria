@@ -8,7 +8,7 @@ controladorClientes.obtenerClientes=async(req,res)=>{
 
 controladorClientes.obtenerCliente=async(req,res)=>{
     const CorreoCliente = req.params.CorreoCliente
-    const row = await pool.query('SELECT * FROM Cliente WHERE CorreoCliente=?', [CorreoCliente])
+    const [row] = await pool.query('SELECT * FROM Cliente WHERE CorreoCliente=?', [CorreoCliente])
     res.send(row)
 }
 
