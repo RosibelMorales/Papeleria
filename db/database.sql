@@ -6,7 +6,7 @@ Nombre VARCHAR(45) NOT NULL,
 Apellidos VARCHAR(65) NOT NULL,
 Direccion VARCHAR(65),
 Celular VARCHAR(10),
-Contraseña VARCHAR(10) NOT NULL,
+Contrasena VARCHAR(10) NOT NULL,
 primary key (CorreoCliente));
 
 CREATE TABLE Producto (idProducto INT AUTO_INCREMENT PRIMARY KEY,
