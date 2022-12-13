@@ -14,9 +14,13 @@ controladorClientes.obtenerCliente=async(req,res)=>{
 
 controladorClientes.agregarCliente=async(req,res)=>{
     const {CorreoCliente, Nombre, Apellidos, Contrasena} = req.body
-    const [rows] = await pool.query('INSERT INTO Cliente VALUES(?,?,?,?)', [CorreoCliente, Nombre, Apellidos, Contrasena])
-    console.log(rows)
-    res.json({"status":"Cliente insertado exitosamente"})
+    if(await pool.query('SELECT * FROM Cliente WHERE CorreoCliente=?', [CorreoCliente])==0){
+        const [rows] = await pool.query('INSERT INTO Cliente VALUES(?,?,?,?)', [CorreoCliente, Nombre, Apellidos, Contrasena])
+        res.json({"status":"Cliente insertado exitosamente"})
+    }
+    else{
+        res.json({"status":"Usuario ya registrado. Intente de nuevo."})
+    }
 }
 
 controladorClientes.actualizarCliente = async(req,res)=>{
