@@ -9,7 +9,7 @@ controladorRepartidor.obtenerRepartidores = async (req, res) => {
 controladorRepartidor.obtenerRepartidor = async(req,res)=>{
     const CorreoRepartidor=req.params.CorreoRepartidor
     const [row]=await pool.query('SELECT * FROM Repartidor WHERE CorreoRepartidor=?',[CorreoRepartidor]);
-    res.send(row);
+    res.send(row[0]);
 }
 
 controladorRepartidor.insertarRepartidor = async (req, res)=>{

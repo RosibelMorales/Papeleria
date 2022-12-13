@@ -9,7 +9,7 @@ controladorProducto.obtenerProductos = async (req, res) => {
 controladorProducto.obtenerProducto = async(req,res)=>{
     const idProducto=req.params.idProducto
     const [rows]=await pool.query('SELECT * FROM Producto WHERE idProducto=?',[idProducto]);
-    res.send(rows);
+    res.send(rows[0]);
 }
 
 controladorProducto.insertarProducto = async (req, res)=>{
