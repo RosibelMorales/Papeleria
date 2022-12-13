@@ -13,8 +13,8 @@ controladorClientes.obtenerCliente=async(req,res)=>{
 }
 
 controladorClientes.agregarCliente=async(req,res)=>{
-    const {CorreoCliente, Nombre, Apellidos, Contrasena} = req.body
-    const [rows] = await pool.query('INSERT INTO Cliente VALUES(?,?,?,?)', [CorreoCliente, Nombre, Apellidos, Contrasena])
+    const {CorreoCliente, Nombre, Apellidos, Direccion, Celular, Contrasena} = req.body
+    const [rows] = await pool.query('INSERT INTO Cliente VALUES(?,?,?,?,?,?)', [CorreoCliente, Nombre, Apellidos, Direccion, Celular, Contrasena])
     res.json({"status":"Cliente insertado exitosamente"})
     console.log(req.body)
 }
